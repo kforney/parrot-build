@@ -4,6 +4,7 @@ parrot-kde
 task-kde-desktop
 sddm
 parrot-drivers
+parrot-tools-full
 
 ## other packages
 vscodium

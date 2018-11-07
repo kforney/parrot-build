@@ -33,7 +33,9 @@ console-setup
 #endif
 
 #important stuff
+cowsay
 cryptsetup
+ethtool
 iw
 lvm2
 mdadm
