@@ -1,11 +1,9 @@
 ## parrot metapackages
 parrot-interface
+parrot-interface-full
 parrot-mate
 parrot-drivers
-
-# parrot tools
-parrot-updater
-anonsurf
+parrot-privacy
 
 # firefox flavor
 #if ARCHITECTURES amd64
@@ -17,20 +15,5 @@ anonsurf
 #endif
 
 ## home packages
-vlc
-geany
 vscodium
 zeal
-electrum
-zulucrypt
-ricochet-im
-libreoffice
-keepassxc
-homebank
-qownnotes
-planner
-rhythmbox
-shotwell
-cheese
-qbittorrent
-gimp

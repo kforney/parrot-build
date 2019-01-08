@@ -5,7 +5,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt update
 
 echo "Removing useless stuff"
-apt-get purge -y seclists firefox-esr qt4-designer qttools5-dev-tools texlive-latex-extra-doc texlive-pstricks-doc texlive-pictures-doc texlive-latex-recommended-doc texlive-latex-base-doc texlive-fonts-recommended-doc texlive-pstricks-doc python-mpltoolkits.basemap-data android-sdk libandroid* arduino leafpad xpra ferret minicom xpdf gvim imagemagick vega samba openjdk-10-* gnome-* || true
+apt-get purge -y seclists exploitdb firefox-esr qt4-designer qttools5-dev-tools texlive-latex-extra texlive-latex-extra-doc texlive-pstricks-doc texlive-pictures-doc texlive-latex-recommended-doc texlive-latex-base-doc texlive-fonts-recommended-doc texlive-pstricks-doc python-mpltoolkits.basemap-data android-sdk libandroid* arduino leafpad xpra ferret minicom xpdf gvim imagemagick imagemagick-* samba openjdk-10-* llvm-6.0-dev mate-user-guide freepats  || true
 
 echo "Manually disabling couchdb"
 systemctl disable couchdb || true
@@ -63,4 +63,4 @@ sed -i "s/WantedBy=multi-user.target//g" /lib/systemd/system/redsocks.service ||
 
 
 echo "cleaning the system with bleachbit"
-bleachbit -c system.localizations apt.autoclean apt.autoremove apt.package_lists deepscan.backup deepscan.ds_store deepscan.thumbs_db deepscan.tmp system.cache system.rotated_logs thumbnails.cache &> /dev/null && echo "done"
+bleachbit -c system.localizations apt.clean apt.autoclean apt.autoremove apt.package_lists deepscan.backup deepscan.ds_store deepscan.thumbs_db deepscan.tmp system.cache system.rotated_logs thumbnails.cache &> /dev/null && echo "done"
