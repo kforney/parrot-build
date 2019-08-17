@@ -3,11 +3,7 @@
 set -e
 set -o pipefail # Bashism
 
-parrot_mirror=http://archive.parrotsec.org/parrot
-public_mirror=http://archive.parrotsec.org/parrot
-
-#public_mirror=http://deb.parrotsec.org/parrot
-
+parrot_mirror=https://deb.parrot.sh/parrot
 
 # Detect target architecture and filter args
 if [ ! $arch ]; then
@@ -16,7 +12,7 @@ fi
 if [ ! $variant ]; then
 	variant="home"
 fi
-dist="parrot"
+dist="rolling"
 lb_opts=""
 while [ $# -gt 0 ]; do
    	arg="$1"
@@ -48,8 +44,6 @@ while [ $# -gt 0 ]; do
 done
 eval set -- "$temp"
 
-# live-build doesn't work if --parent-debian-distribution is unknown of
-# debian-cd => we have to put a symlink so that it deals with kali like sid
 if [ ! -e ${LIVE_BUILD:-/usr/share/live/build}/data/debian-cd/$dist ]; then
 	if [ -w ${LIVE_BUILD:-/usr/share/live/build}/data/debian-cd ]; then
 		ln -sf sid ${LIVE_BUILD:-/usr/share/live/build}/data/debian-cd/$dist
@@ -114,7 +108,7 @@ lb config noauto \
 	--mirror-binary "$public_mirror" \
 	--iso-application "Parrot" \
 	--iso-publisher "Parrot Project" \
-	--iso-volume "ParrotSec" \
+	--iso-volume "Parrot $variant" \
 	--linux-packages linux-image \
 	--bootappend-live "boot=live hostname=parrot splash noautomount" \
 	--source false \

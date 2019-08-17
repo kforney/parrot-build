@@ -2,19 +2,16 @@
 parrot-interface
 parrot-interface-full
 parrot-kde
-sddm
+lightdm-parrot
 parrot-drivers
 parrot-crypto
 parrot-privacy
+parrot-tools-full
+parrot-devel
 
-## other packages
+## home packages
 vscodium
 zeal
-parrot-pico
-golang
-cargo
-valac
-gcc
-mono-runtime
-mono-devel
-default-jdk
+
+## fast remediations
+python-dbus

@@ -22,10 +22,6 @@ open-vm-tools
 apt-parrot
 parrot-core
 
-# provide l10n for everybody
-locales-all
-console-setup
-
 #if ARCHITECTURES armel armhf
  cgpt
  vboot-utils
@@ -33,7 +29,7 @@ console-setup
 #endif
 
 #important stuff
-cowsay
+snapd
 cryptsetup
 ethtool
 iw
@@ -41,16 +37,20 @@ lvm2
 mdadm
 openvpn
 parted
+gpart
 bash-completion
 resolvconf
 rng-tools
 haveged
+vim
 
 #security
 apparmor
 apparmor-profiles
 apparmor-profiles-extra
 apparmor-utils
+apparmor-easyprof
+apparmor-notify
 firejail
 
 #filesystem support
@@ -66,6 +66,11 @@ reiser4progs
 reiserfsprogs
 xfsprogs
 xfsdump
+ntfs-3g
+libfsapfs1
+libfsapfs-utils
+ufw
+gufw
 
 #additional stuff
 xserver-xorg-video-all
